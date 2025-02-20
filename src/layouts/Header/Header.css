@@ -1,0 +1,55 @@
+.navigation{
+    background: #fafafa;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.navbar-buttons{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.navbar-buttons .nav-button {
+    border-radius: 10px;
+    padding: 15px;
+    color: #FFF;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: normal;
+}
+.nav-button.call-btn{
+    background: var(--btn, linear-gradient(180deg, #243D92 0%, #001459 100%));
+
+}
+.nav-button.schedule-btn{
+background: var(--btn-2, linear-gradient(180deg, #39B549 0%, #00590C 100%));
+}
+
+@media (max-width:1024px) {
+    .navbar{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-button{
+        display: none;
+    }
+   
+}
+
+@media (max-width:600px) {
+    .navbar-buttons{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .navbar-buttons .nav-button{
+        padding: 10px 20px;
+    }
+    
+
+}

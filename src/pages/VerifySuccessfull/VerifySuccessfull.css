@@ -1,0 +1,138 @@
+.verify-success{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/images/success-bg.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+}
+
+.success-box {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px 50px;
+    border-radius: 40px 10px 40px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.unsuccess-box {
+    text-align: center;
+    background-color: #fff;
+    padding: 50px 50px;
+    border-radius: 40px 10px 40px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.unsuccess-box h1 {
+ color: red;
+}
+
+
+.successbutton{
+    margin-top: 30px;
+
+}
+
+@supports (animation: grow .5s cubic-bezier(.25, .25, .25, 1) forwards) {
+    .tick {
+       stroke-opacity: 0;
+       stroke-dasharray: 29px;
+       stroke-dashoffset: 29px;
+       animation: draw .5s cubic-bezier(.25, .25, .25, 1) forwards;
+       animation-delay: 1.5s;
+}
+
+   /* .circle {
+       fill-opacity: 0;
+       stroke: #219a00;
+       stroke-width: 16px;
+       transform-origin: center;
+       transform: scale(0);
+       animation: grow 1s cubic-bezier(.25, .25, .25, 1.25) forwards;   
+   }    */
+}
+@keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+.cross__svg {
+    border-radius: 50%;
+    display: block;
+    height: 100px;
+    margin: 10px auto;
+    stroke-width: 3;
+    width: 154px;
+}
+
+.save__svg {
+    border-radius: 50%;
+    stroke: rgba(0, 0, 0, 0.1);
+    display: block;
+    height: 100px;
+    margin: 10px auto;
+    stroke-width: 3;
+    width: 154px;
+}
+
+.cross__circle {
+    animation: 0.6s ease 0s normal forwards 1 running stroke;
+    fill: none;
+    margin: 0 auto;
+    stroke: red;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+}
+
+.cross__path {
+    stroke: red;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    transform-origin: 50% 50% 0;
+   
+      animation: 0.3s ease 0.8s normal forwards 1 running stroke;
+      animation: 1s ease 0.8s normal forwards 1 running stroke;
+}
+
+
+
+
+
+
+@keyframes grow {
+   60% {
+       transform: scale(.8);
+       stroke-width: 4px;
+       fill-opacity: 0;
+   }
+   100% {
+       transform: scale(.9);
+       stroke-width: 8px;
+       fill-opacity: 1;
+       fill: #219a00;
+}
+}
+
+@keyframes draw {
+   0%, 100% { stroke-opacity: 1; }
+   100% { stroke-dashoffset: 0; }
+}
+
+.success-box h1 {
+    color: #4CAF50;
+    margin: 10px 0;
+}
+
+.success-box p {
+    color: #333;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .success-box {
+        width: 65%;
+    }
+}

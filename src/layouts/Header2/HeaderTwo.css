@@ -1,0 +1,121 @@
+.header {
+  width: 100%;
+  height: 10vh;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 1px #ccc;
+  z-index: 1;
+  /* margin-bottom: 5vh; */
+  /* position: fixed;
+  padding: 40px 0; */
+
+}
+.header .nav {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header .nav .user {
+  flex: 1;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu-drop{
+display: none !important;
+}
+.dropbtn {
+  background-color: rgb(57 181 73);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  display: flex;
+  gap: 30px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+  border-radius: 10px;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn button {background-color: #a85454; color: rgb(57 181 73);}
+
+
+
+
+/************** Facility Code ****************/
+
+.facility-code ol{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 20px;
+}
+.facility-code ol li{
+  background: rgb(57 181 73);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.facility-code ol li p{
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 5px;
+}
+
+
+@media (max-width:840px) {
+  .menu-drop{
+    display: block !important;
+  }
+  .menu-mob{
+    display: none !important;
+  }
+  .dropbtn1 {
+    background-color:transparent !important;
+    color: black;
+    padding: 5px 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    padding: 5px;
+    width: 100%;
+}
+.dropdown-content a {
+  color: black;
+  padding: 2px 16px;
+}
+}

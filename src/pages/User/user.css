@@ -1,0 +1,98 @@
+.User-content{
+    position: absolute;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(255, 255, 255);
+}
+.user-head{
+    width: 88vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto 15px auto;
+}
+.add-row-btn{
+  width: 88vw;
+  margin: 20px auto !important;
+}
+.addrowbuttons {
+  position: absolute;
+  right: 0% !important;
+  top: 6px !important;
+}
+.UserTable{
+    overflow-x: auto;
+    width: 88vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    max-height: 650px;
+}
+.UserTable-data{
+    border-collapse: collapse;
+    width: 100%;
+}
+.UserTable-data th,
+.UserTable-data td {
+    text-align: left;
+    padding: 8px;
+}
+
+.UserTable-data thead {
+  background-color: rgb(57 181 73);
+  color: white;
+}
+
+.UserTable-data thead tr td {
+  text-align: center;
+  font-weight: 900;
+}
+.UserTable-data tbody tr:nth-child(even) td {
+    background-color: #b0f5b947; 
+  }
+  .UserTable-data thead tr th {
+    text-align: center;
+  }
+  .UserTable-data tbody tr td {
+    text-align: center;
+    border: solid 1px #ccc;
+  }
+  .showerrpwd{
+
+    color: red;
+    font-size: 12px;
+
+  }
+.dropbtn {
+    background-color: rgb(57 181 73);
+    color: white;
+    padding: 10px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+}
+.add-user-action{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.reset-btn{
+    background-color: rgb(57 181 73);
+    color: white;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+}
+.delete-btn{
+    background-color: rgb(179, 56, 56);
+    color: white;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+}

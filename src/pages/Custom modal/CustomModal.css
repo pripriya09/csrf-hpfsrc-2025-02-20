@@ -1,0 +1,63 @@
+
+/* CustomModal.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    margin-top: 0% !important;
+    left: 40%;
+    background-color: white;
+    padding: 30px !important;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    z-index: 1000;
+    border: none;
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .modal-header h2 {
+    margin: 5px;
+  }
+  .modal p {
+     margin-bottom: 0px !important;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+  .modal-header button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .modal-body {
+    padding: 20px 0;
+    text-align: justify;
+  }
+  
+  .modal-footer {
+    text-align: right;
+  }
+  .modal-footer button{
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  

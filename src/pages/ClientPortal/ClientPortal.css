@@ -1,0 +1,204 @@
+
+i.verified {
+color: black;
+background: green;
+border-radius: 50%;
+}
+i.decline {
+color: black;
+background: red;
+border-radius: 50%;
+}
+
+.footer-txt{
+  margin-top: 10px;
+}
+.flt_name {
+font-size: 20px;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+/* border: solid 1px #b7e5be; */
+padding: 10px;
+margin-bottom: 15px;
+
+}
+.flt_name p{
+  font-weight: 500;
+}
+.flt_name span {
+  margin-left: 5px;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+ 
+.hdr_txt{
+    margin-bottom: 30px;
+}
+.verification-radio {
+    display: none; /* Hide the default radio button */
+  }
+  
+  .custom-radio {
+    width: 12px; /* Adjust width as needed */
+    height: 12px; /* Adjust height as needed */
+    border-radius: 50%;
+    border: 2px solid black; /* Change the border color */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .custom-radio::after {
+    content: "";
+    display: block;
+    width: 8px; /* Adjust size as needed */
+    height: 8px; /* Adjust size as needed */
+    background-color: black; /* Change the fill color */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initially hidden */
+  }
+  
+  .verified-radio:checked + .custom-radio::after {
+    opacity: 1; /* Show the inner circle when the radio button is checked */
+  }
+  
+
+  /* toogle button css for special permission page */
+
+  .tabs button{
+    background-color: #fff;
+    color: rgb(57 181 73);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #39b549;
+    font-weight: 800;
+  }
+
+  .tabs button:hover {
+    background-color: rgb(57 181 73);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+    border: solid 1px #39b549;
+    font-weight: 800;
+}
+
+ 
+ 
+.tabs button.active,
+.tabs button:focus,
+.tabs button:active {
+  background-color: #39b549; /* Active color */
+  color: #fff;
+}
+
+.txt_red{
+background: red;
+}
+.tabs{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.tabs select{
+  border-radius: 5px;
+  border: 0px rgba(227, 227, 227, 0.48);
+  background: rgb(233 252 236);
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.tabs label{
+  font-size: 16px;
+  font-weight: 700;
+}
+  .toggle_btn {
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    position: relative;
+    float: right;
+    margin-bottom: 10px;
+  }
+  
+  .toggle_btn input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle_btn .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: background-color 0.4s, border-radius 0.4s;
+    border-radius: 34px;
+  }
+  
+  .toggle_btn .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: transform 0.4s;
+    border-radius: 50%;
+  }
+  
+  .toggle_btn input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  .toggle_btn input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  td.edit-name-btn {
+    border: none !important;
+    background-color: transparent !important;
+    padding: 0px !important;
+}
+
+  /* end toogle buttn css for special permission page  */
+  .declined-radio:checked + .custom-radio::after {
+    opacity: 1; /* Show the inner circle when the radio button is checked */
+  }
+  
+  .verified-radio + .custom-radio::after {
+    background-color: green; /* Set green color for the inner circle */
+  }
+  
+  .declined-radio + .custom-radio::after {
+    background-color: red; /* Set red color for the inner circle */
+  }
+  .custom-radio {
+    width: 20px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+  }
+  
+  /* Increase the size of the inner circle */
+  .custom-radio::after {
+    width: 20px; /* Adjust size as needed */
+    height: 20px; /* Adjust size as needed */
+  }

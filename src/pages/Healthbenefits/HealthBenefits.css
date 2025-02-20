@@ -1,0 +1,133 @@
+.hb-hero {
+    text-align: center;
+    background: url('/images/health-benefits-bg.png');
+}
+
+.hb-hero h1 {
+    color: #39B549;
+    text-align: center;
+    font-family: IBM Plex Sans;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.hb-hero h3 {
+    color: #1C3897;
+    font-family: IBM Plex Sans;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.hb-hero .hb-des {
+    color: #000;
+    text-align: center;
+    font-family: IBM Plex Sans;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 40px;
+}
+
+.hb-section h2 {
+    color: #243D92;
+    text-align: center;
+    font-family: IBM Plex Sans;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 30px;
+}
+.hb-section-chlid h3{
+    color: #39B549;
+text-align: center;
+margin-top: 20px;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: 35px; 
+}
+
+/********************* health benefits section ******************/
+
+.hb-section-chlid {
+    border-radius: 15px;
+    border: 2px solid #E4E4E4;
+    background: rgba(246, 246, 246, 0.50);
+    padding: 60px;
+    margin: 50px 0;
+}
+
+.hb-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+.hb-left-content{
+    width: 60%;
+}
+.hb-right-content{
+    width: 40%;
+}
+.hb-right-content img{
+    width: 100%;
+}
+.hb-right-content.order{
+    order: -1;
+}
+
+.hb-left-content p {
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.hb-left-content-chlid {
+    display: flex;
+    align-items: start;
+}
+.hb-left-content-chlid .health{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.hb-left-content-chlid p {
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+@media (max-width:820px) {
+    .hb-hero {
+        background: url('/images/health-benefits-bg2.png');
+        background-position: center;
+    }
+}
+
+@media (max-width:600px) {
+    .hb-content{
+        flex-direction: column;
+    }
+    .hb-left-content{
+        width: 100%;
+    }
+    .hb-right-content{
+        width: 100%;
+    }
+    .hb-right-content.order{
+        order: 0;
+    }
+    .hb-section-chlid{
+        padding: 30px;
+    }
+}

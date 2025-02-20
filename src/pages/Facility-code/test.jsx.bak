@@ -1,0 +1,244 @@
+import React, { useState, useEffect } from "react";
+import './Facility-code.css';
+import HeaderTwo from '../../layouts/Header2/HeaderTwo';
+import FacilityTableRows from "../../components/comman/FacilityTableRows";
+import { baseurl } from '../../constant/enviroment/enviroment';
+import Cookies from 'js-cookie';
+
+const Facilitycode = () => {
+  const [data, setData] = useState([]);
+  const [rowsData, setRowsData] = useState([]);
+  const [newRowData, setNewRowData] = useState({
+    name: "",
+    state: "",
+    county: "",
+    verification_contact: "",
+    emailid: "",
+    facility_code: "",
+    status: "",
+  });
+
+  const [checkedItems, setCheckedItems] = useState({});
+  const [filterCriteria, setFilterCriteria] = useState('');
+  const [sortColumn, setSortColumn] = useState(null);
+  const [sortOrder, setSortOrder] = useState('asc');
+
+  const handleCheckboxChange = async (_id, status) => {
+    try {
+      const token = Cookies.get('session');
+      const response = await fetch(baseurl + '/admin/update-facility-status', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token,
+        },
+        body: JSON.stringify({
+          "_id": [_id],
+          "checked": status === 'true' ? false : true,
+        })
+      });
+
+      if (response.ok) {
+        //console.log('API call successful');
+        setCheckedItems(prevState => ({
+          ...prevState,
+          [_id]: !prevState[_id],
+        }));
+      } else {
+        console.error('API call failed');
+      }
+    } catch (error) {
+      console.error('Error making API call:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const token = Cookies.get('session');
+      const response = await fetch(baseurl + '/admin/fetch-facility-codes', {
+        method: 'get',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const apiData = await response.json();
+      setData(apiData.data);
+
+      if (apiData.data[0].status === 'false') {
+        //console.log('false aa gaya hai');
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  const addTableRows = () => {
+    setRowsData([...rowsData, newRowData]);
+    setNewRowData({
+      name: "",
+      state: "",
+      county: "",
+      verification_contact: "",
+      emailid: "",
+      facility_code: "",
+      dedicated_facility_link: "",
+      status: "",
+    });
+  };
+
+  const deleteTableRow = (index) => {
+    setRowsData((prevRows) => {
+      const newRows = [...prevRows];
+      newRows[index].markedForDeletion = true;
+      return newRows;
+    });
+  };
+
+  const saveTableRows = async (index) => {
+    const updatedRow = rowsData[index];
+
+    try {
+      const token = Cookies.get('session');
+      const response = await fetch(baseurl + '/admin/addfacilitycode', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': token,
+        },
+        body: JSON.stringify(updatedRow),
+      });
+      const responseData = await response.json();
+
+      if (responseData.success) {
+        window.confirm(responseData.message);
+        fetchData();
+      } else {
+        console.error('Error updating data:', responseData.message);
+        alert(`${responseData.message}\nPlease check the correct facility code and add with a new facility code`);
+      }
+    } catch (error) {
+      console.error('Error updating data:', error);
+    }
+  };
+
+  const handleChange = (index, evnt) => {
+    const { name, value } = evnt.target;
+    const updatedRows = [...rowsData];
+    updatedRows[index][name] = value;
+    setRowsData(updatedRows);
+  };
+
+  const filteredData = data.filter((user) => {
+    const match = Object.entries(user).some(([key, value]) => {
+      if (typeof value === 'string') {
+        const regex = new RegExp(escapeRegExp(filterCriteria), 'i');
+        return regex.test(value);
+      } else if (typeof value === 'number') {
+        return value === parseFloat(filterCriteria);
+      }
+      return false;
+    });
+
+    return match;
+  });
+
+  function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  const sortedData = [...filteredData].sort((a, b) => {
+    if (!sortColumn) return 0;
+    const aValue = a[sortColumn];
+    const bValue = b[sortColumn];
+
+    if (aValue < bValue) return sortOrder === 'asc' ? -1 : 1;
+    if (aValue > bValue) return sortOrder === 'asc' ? 1 : -1;
+
+    return 0;
+  });
+
+  const handleColumnClick = (column) => {
+    if (column === sortColumn) {
+      setSortOrder((order) => (order === 'asc' ? 'desc' : 'asc'));
+    } else {
+      setSortColumn(column);
+      setSortOrder('asc');
+    }
+  };
+
+  return (
+    <>
+      <div className="facility-code-parent mt-3">
+        <div className="container">
+          <HeaderTwo />
+          <div className="addtable pb-4">
+            <div className="add-row-btn">
+              <input
+                type="text"
+                placeholder="Type "
+                value={filterCriteria}
+                onChange={(e) => setFilterCriteria(e.target.value)}
+              />
+              <button className="dropbtn btn_facility_manager" onClick={addTableRows}> Add Facility</button>
+            </div>
+
+            <div className="admin-table">
+              <table className="table tablepos">
+                <thead>
+                  <tr>
+                    <th>Sr. No.</th>
+                    <th>Facility Name</th>
+                    <th>State</th>
+                    <th>County</th>
+                    <th>Verification Contact</th>
+                    <th>Contact Email</th>
+                    <th>Facility Code</th>
+                    <th>Dedicated Facility Link</th>
+                    <th>Active</th>
+                  </tr>
+                </thead>
+
+                <tbody className="dataform">
+                  {Array.isArray(sortedData) && sortedData.map((item, index) => (
+                    <tr key={item._id}>
+                      <td data-label="Facility Code">{index + 1}</td>
+                      <td data-label="Facility Code">{item.name}</td>
+                      <td data-label="Contact">{item.state}</td>
+                      <td data-label="Contact">{item.county}</td>
+                      <td data-label="Contact">{item.verification_contact}</td>
+                      <td data-label="Contact">{item.emailid}</td>
+                      <td data-label="Contact">{item.facility_code}</td>
+                      <td data-label="Contact">
+                        <a href={item.dedicated_facility_link} target="_blank" rel="noopener noreferrer">
+                          {item.dedicated_facility_link}
+                        </a>
+                      </td>
+                      <td data-label="Contact">
+                        <input
+                          type="checkbox"
+                          defaultChecked={(checkedItems && item.status === 'true') || (!checkedItems && item.status === 'false')}
+                          onClick={() => handleCheckboxChange(item._id, item.status)}
+                        />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Facilitycode;

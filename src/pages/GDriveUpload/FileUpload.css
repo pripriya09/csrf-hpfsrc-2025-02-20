@@ -1,0 +1,294 @@
+.G-Drive-container {
+  width: 100%;
+}
+
+.input-upload {
+  display: inline-block; /* Allow it to be styled */
+  padding: 10px; /* Padding for the input */
+  border: 2px dashed #19911d; /* Dashed border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f8f9fa; /* Light background color */
+  color: #19911d; /* Text color */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  transition: border-color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+
+  text-align: center; /* Center text */
+}
+
+.input-upload:hover {
+  border-color: #19911d; /* Darker blue on hover */
+  background-color: #e9ecef; /* Slightly darker background on hover */
+}
+
+.input-upload:focus {
+  outline: none; /* Remove default outline */
+  border-color: #0056b3; /* Darker border when focused */
+  background-color: #e9ecef; /* Maintain background on focus */
+}
+
+.content {
+  position: relative;
+ 
+  background: #fff;
+  padding: 25px 95px 20px 95px;
+}
+.Names {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.Names h6 {
+  font-size: 25px;
+}
+.drive-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   
+}
+.csv-drive-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+ 
+}
+.footer-parent1 {
+  background: #fafafa;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+}
+.drive-upload .para {
+  font-size: 20px;
+}
+.upload {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  gap: 30px;
+  align-items: center;
+}
+.upload p {
+  font-size: 18px;
+}
+
+.loader {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.custom-upload-button {
+  border: solid 1px #19911d;
+  font-size: 18px;
+  background-color: #19911d;
+  padding: 5px 30px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.pagination {
+  padding: 10px;
+  align-content: space-between;
+  display: flex;
+  width: 46%;
+  justify-content: space-between;
+}
+button.pagination-button {
+  background: #39b549;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  color: #fff;
+  width: 100px;
+  font-weight: 800;
+}
+.form-inpt {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.custom-upload-button:hover {
+  background-color: #009414;
+}
+.upload-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 40px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #19911d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+}
+ 
+
+.gdrive-table {
+  overflow-x: auto !important;
+  overflow-y: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-container {
+  max-height: 500px; /* Set the height you want */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  margin-top: 20px;
+  width: 100%;
+}
+
+.table-container1 {
+  max-height: 350px; /* Set the height you want */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+  margin-top: 20px;
+}
+
+.gdrive-table table {
+  width: fit-content;
+  word-break: normal;
+  margin: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
+  min-width: 70%;
+ 
+}
+.csv-table {
+  max-height: 350px;
+  overflow: scroll;
+}
+
+.upload-history{
+  margin: 20px 0px;
+}
+.upload-history h2{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.upload-history table{
+  width: fit-content;
+  word-break: normal;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+.upload-history table thead{
+  background-color: rgb(57 181 73);
+  color: white;
+}
+.upload-history  table thead tr th{
+  text-align: left;
+  border: solid 1px #ccc;
+  padding: 5px;
+}
+.upload-history table tbody tr td{
+  text-align: left;
+  border: solid 1px #ccc;
+  padding: 5px;
+}
+
+
+.flt_name table{
+  width: fit-content;
+  word-break: normal;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+.flt_name table thead{
+  background-color: rgb(57 181 73);
+  color: white;
+}
+.flt_name table thead tr th{
+  text-align: left;
+  border: solid 1px #ccc;
+  padding: 5px;
+}
+.flt_name table tbody tr td{
+  text-align: left;
+  border: solid 1px #ccc;
+  padding: 5px;
+}
+.gdrive-table table thead {
+  background-color: rgb(57 181 73);
+  color: white;
+  position: sticky;
+  top: 0;
+}
+.gdrive-table table thead tr th {
+  text-align: center;
+  font-weight: 900;
+  padding: 5px;
+}
+a.download-icon {
+  color: #248430;
+}
+.searchfor {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 70%;
+}
+.searchfor input{
+  width: 40%;
+}
+td.success-icon {
+  text-align: center !important;
+  color: #248430;
+  font-size: 24px;
+
+}
+.gdrive-table table tbody tr td {
+  text-align: left;
+  border: solid 1px #ccc;
+  padding: 8px;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gdrive-table table tbody tr:nth-child(even) td {
+  background-color: #b0f5b947;
+}
+
+@media screen and (max-width: 800px) {
+  .gdrive-table table {
+    width: 100%;
+  }
+  .upload {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-inpt {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+  .custom-upload-button {
+    border: solid 1px #19911d;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .G-Drive-container .content {
+    position: relative;
+    min-height: 90vh;
+    background: #fff;
+    padding: 25px;
+  }
+}

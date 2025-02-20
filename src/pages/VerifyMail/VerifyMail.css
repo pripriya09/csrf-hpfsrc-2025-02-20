@@ -1,0 +1,33 @@
+.verify-mail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-image: url(./images/verify-bg.jpg); */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100vw;
+}
+.mail-box{
+    text-align: center;
+    background-color: #fff;
+    padding: 30px 50px;
+    border-radius: 40px 10px 40px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.mail-txt{
+    line-height: 40px;
+    font-size: 25px;
+}
+.green{
+    color: green;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+
+@media (max-width: 600px) {
+    .mail-box {
+        width: 65%;
+    }
+}

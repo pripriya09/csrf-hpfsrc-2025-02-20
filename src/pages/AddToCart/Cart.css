@@ -1,0 +1,175 @@
+.cart-section .woocommerce table.shop_table {
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 0 -1px 24px 0;
+    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 5px;
+}
+
+.cart-section .woocommerce table.shop_table th {
+    font-weight: 700;
+    padding: 9px 12px;
+    line-height: 1.5em;
+}
+.cart-section table td, .cart-section th {
+    border: 1px solid #c2c2c2 !important;
+}
+
+.cart-section .woocommerce-cart table.shop_table td, .woocommerce-cart table.shop_table th, .woocommerce-checkout table.shop_table td, .woocommerce-checkout table.shop_table th {
+    border-right: 0;
+}
+
+.cart-section .woocommerce table.shop_table td {
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 9px 12px;
+    vertical-align: middle;
+    line-height: 1.5em;
+}
+.cart-section .woocommerce a.remove {
+    font-weight: 400;
+    font-size: 18px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 100%;
+    color: #ccc!important;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cart-section .woocommerce td.product-quantity {
+    min-width: 80px;
+}
+.cart-section .screen-reader-text {
+    border: 0;
+    clip: rect(1px,1px,1px,1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute!important;
+    width: 1px;
+    word-wrap: normal!important;
+}
+
+.cart-section .woocommerce #content table.cart td.actions, .woocommerce table.cart td.actions, .woocommerce-page #content table.cart td.actions, .woocommerce-page table.cart td.actions {
+    text-align: right;
+}
+.cart-section .woocommerce button.button {
+    background-color: #10659C;
+    color: #ffffff;
+}
+
+.cart-section .woocommerce .cart .button, .woocommerce .cart input.button {
+    float: none;
+}
+
+.cart-section .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+    line-height: 1;
+    border: 0px solid #10659C;
+    border-radius: 0px;
+    padding: 10px;
+}
+.cart-section .woocommerce-cart table.cart input, .woocommerce-checkout table.cart input {
+    padding: 0.25em;
+}
+.cart-section input,.cart-section select,.cart-section textarea {
+    color: #333;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    background-color: #fff;
+    width: 100%;
+    word-wrap: break-word;
+    -ms-word-wrap: break-word;
+}
+.cart-section .woocommerce .cart-collaterals, .woocommerce-page .cart-collaterals {
+    width: 100%;
+}
+.cart-section .woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
+    float: right;
+    width: 48%;
+}
+.cart-section .woocommerce-cart .cart-collaterals .cart_totals, .woocommerce-cart .cart-collaterals .cross-sells, .woocommerce-checkout .cart-collaterals .cart_totals, .woocommerce-checkout .cart-collaterals .cross-sells {
+    padding: 0 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ebebeb;
+    border-radius: 0;
+    margin-bottom: 2em;
+}
+.cart-section .woocommerce-cart .cart-collaterals .cart_totals>h2, .woocommerce-checkout .cart-collaterals .cart_totals>h2 {
+    margin: 0 -20px 20px;
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 1.2rem;
+    padding: 0.7em 1em;
+}
+.cart-section input#coupon_code {
+    width: 150px !important;
+    margin-top: 0px;
+    float: left;
+    padding: 6px;
+    margin-bottom: 6px;
+}
+.cart-section .coupon.under-proceed button.button {
+    width: auto !important;
+    margin-left: 10px;
+}
+.cart-section .woocommerce-cart .cart-collaterals .cart_totals table, .woocommerce-checkout .cart-collaterals .cart_totals table {
+    border-collapse: separate;
+    margin: 0 0 6px;
+    padding: 0;
+}
+
+.cart-section #add_payment_method .cart-collaterals .cart_totals table th, .woocommerce-cart .cart-collaterals .cart_totals table th, .woocommerce-checkout .cart-collaterals .cart_totals table th {
+    width: 35%;
+}
+.cart-section #add_payment_method .wc-proceed-to-checkout, .woocommerce-cart .wc-proceed-to-checkout, .woocommerce-checkout .wc-proceed-to-checkout {
+    padding: 1em 0;
+}
+.cart-section .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+    display: block;
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.25em;
+    padding: 1em;
+}
+
+.cart-section .button.wc-forward, .button.product_type_variable-subscription.add_to_cart_button {
+    background-color: #ff5800 !important;
+    color: #fff !important;
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1024px) and (orientation: landscape){
+    .cart-section .product-name {
+    width: 50%;
+}
+.cart-section .product-remove {
+    width: 10%;
+}
+.cart-section .product-price {
+    width: 15%;
+}
+.cart-section .product-quantity {
+    width: 10%;
+}
+.cart-section .product-subtotal {
+    width: 15%;
+    border-right: none;
+}
+}
